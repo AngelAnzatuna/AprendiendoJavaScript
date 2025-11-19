@@ -6,7 +6,7 @@ class Cliente {
     }
 }
 
-// Intanciar
+// Instanciar
 const angel = new Cliente('Angel', 1000);
 console.log(angel);
 
