@@ -1,5 +1,7 @@
-import { nombreCliente, ahorro, mostrarInformacion, tieneSaldo, Cliente} from "./cliente.js";
+import alias, { nombreCliente, ahorro, mostrarInformacion, tieneSaldo, Cliente} from "./cliente.js";
 import { Empresa } from "./empresa.js";
+
+alias();
 
 console.log(nombreCliente);
 console.log(ahorro);

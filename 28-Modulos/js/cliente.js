@@ -23,3 +23,7 @@ export class Cliente {
         return `Cliente: ${this.nombre} - Ahorro: ${this.ahorro}`;
     }
 }
+
+export default function exportDefaul() {
+    console.log('Desde export default');
+}
