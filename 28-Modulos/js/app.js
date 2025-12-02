@@ -1,4 +1,4 @@
-import { nombreCliente, ahorro, mostrarInformacion, tieneSaldo } from "./cliente.js";
+import { nombreCliente, ahorro, mostrarInformacion, tieneSaldo, Cliente} from "./cliente.js";
 
 console.log(nombreCliente);
 console.log(ahorro);
@@ -6,3 +6,9 @@ console.log(ahorro);
 console.log(mostrarInformacion(nombreCliente, ahorro));
 
 tieneSaldo(ahorro);
+
+const cliente = new Cliente(nombreCliente, ahorro);
+
+console.log(cliente);
+
+console.log(cliente.mostrarInformacion());
