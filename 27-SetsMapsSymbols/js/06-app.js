@@ -19,4 +19,7 @@ const carrito = ['producto 1', 'producto 2', 'producto 3'];
 
 const recorrerCarrito = crearIterador(carrito);
 
-console.log(recorrerCarrito);
+console.log(recorrerCarrito.siguiente());
+console.log(recorrerCarrito.siguiente());
+console.log(recorrerCarrito.siguiente());
+console.log(recorrerCarrito.siguiente());
