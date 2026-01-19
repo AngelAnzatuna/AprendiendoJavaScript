@@ -37,15 +37,23 @@ function consultarCriptomonedas() {
 // llena el select 
 function selectCriptomonedas(criptomonedas) {
 
-    criptomonedas.forEach( cripto => {
-        const { FullName, Name } = cripto.CoinInfo;
+    // criptomonedas.forEach( cripto => {
+    //     const { FullName, Name } = cripto.CoinInfo;
+    //     const option = document.createElement('option');
+    //     option.value = Name;
+    //     option.textContent = FullName;
+    //     // insertar el HTML
+    //     criptomonedasSelect.appendChild(option);
+    // });
+
+    for(let i = 0; i < criptomonedas.length; i++) {
+        const { FullName, Name } = criptomonedas[i].CoinInfo;
         const option = document.createElement('option');
         option.value = Name;
         option.textContent = FullName;
         // insertar el HTML
         criptomonedasSelect.appendChild(option);
-    });
-
+    }
 }
 
 
@@ -89,6 +97,8 @@ function mostrarAlerta(mensaje) {
 
 function consultarAPI() {
 
+    const inicio = performance.now();
+
     const { moneda, criptomoneda} = objBusqueda;
 
     const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`;
@@ -101,17 +111,19 @@ function consultarAPI() {
             mostrarCotizacionHTML(cotizacion.DISPLAY[criptomoneda][moneda]);
         });
 
+    const fin = performance.now();
+    console.log(fin-inicio)
 }
 
 function mostrarCotizacionHTML(cotizacion) {
 
     limpiarHTML();
 
-    console.log(cotizacion);
+    // console.log(cotizacion);
     const  { PRICE, HIGHDAY, LOWDAY, CHANGEPCT24HOUR, LASTUPDATE } = cotizacion;
 
 
-    debugger;
+    // debugger;
 
     const precio = document.createElement('p');
     precio.classList.add('precio');
@@ -129,7 +141,7 @@ function mostrarCotizacionHTML(cotizacion) {
     const ultimaActualizacion = document.createElement('p');
     ultimaActualizacion.innerHTML = `<p>Última Actualización: <span>${LASTUPDATE}</span></p>`;
 
-    debugger;
+    // debugger;
 
     resultado.appendChild(precio);
     resultado.appendChild(precioAlto);
